@@ -32,14 +32,14 @@ typedef struct map_view_s {
 
 void print_spaces(int spaces) {
     for (int i = 0; i < spaces; ++i) {
-        printf("   ");
+        printf(" ");
     }
 }
 
 void print_coordinates(int width, int x_start, int y_start) {
     // Prints width section of the row
     for (int i = 0; i < width; ++i) {
-        printf("(%d, %d)", x_start + i, y_start - i);
+        printf(". ");
     }
     printf("\n");
 }
@@ -64,7 +64,6 @@ void draw_view(
 
     if(flipper == 1) {
         print_spaces(1);
-        printf("*");
         print_coordinates(view_size, x_start, y_start);
         y_start ++;
     }
@@ -78,7 +77,6 @@ void draw_view(
     }
 
     if(flipper == 0) {
-        printf("*");
         print_coordinates(view_size + 1, x_start, y_start);
     }
 
