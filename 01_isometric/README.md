@@ -5,17 +5,17 @@ Some isometric math experiments, mostly rotating a 2d grid into an isometric vie
 
 ## Drawing a 2-d map, diagonally (from the game source code)
 
-  (0, 0)            |              /\ (0,0)                   |  Per-iteration start tile:
-    _ _ _ _ _ _     |             /\/\                     <- |  1: (0, 0) - width = 1
-   |_|_|_|_|_|_|    |            /\/\/\                       |  2: (0, 1)
-   |_|_|_|_|_|_|    |           /\/\/\/\                      |  3: (0, 2)
-   |_|_|_|_|_|_|    |   (0, 5) /\/\/\/\/\                     |  4: (0, 3) _
-   |_|_|_|_|_|_|    |          \/\/\/\/\/\ (5, 0)          <- |  5: (0, 4)  |- same width
-   |_|_|_|_|_|_|    |           \/\/\/\/\/                 <- |  6: (1, 4) _|
-           (4, 5)   |       ---- \/\/\/\/ <- a row to draw    |  7: (2, 4)
-   fig. 1           |             \/\/\/                      |  8: (3, 4)
-   2-D Array        |   fig. 2     \/\/                       |  9: (4, 4)
-                    |  Rotated 45°  \/ (4, 5)              <- | 10: (5, 4) - width = 1
+    (0, 0)            |              /\ (0,0)                   |  Per-iteration start tile:
+      _ _ _ _ _ _     |             /\/\                     <- |  1: (0, 0) - width = 1
+     |_|_|_|_|_|_|    |            /\/\/\                       |  2: (0, 1)
+     |_|_|_|_|_|_|    |           /\/\/\/\                      |  3: (0, 2)
+     |_|_|_|_|_|_|    |   (0, 5) /\/\/\/\/\                     |  4: (0, 3) _
+     |_|_|_|_|_|_|    |          \/\/\/\/\/\ (5, 0)          <- |  5: (0, 4)  |- same width
+     |_|_|_|_|_|_|    |           \/\/\/\/\/                 <- |  6: (1, 4) _|
+             (4, 5)   |       ---- \/\/\/\/ <- a row to draw    |  7: (2, 4)
+     fig. 1           |             \/\/\/                      |  8: (3, 4)
+     2-D Array        |   fig. 2     \/\/                       |  9: (4, 4)
+                      |  Rotated 45°  \/ (4, 5)              <- | 10: (5, 4) - width = 1
 
 
 diamond.c - Prints the full rectangle rotated 45 degrees
